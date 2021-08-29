@@ -1,0 +1,23 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+api_login:
+  path: /api/login
+  controller: App\Controller\AuthenticationController::login
+  methods: POST
+
+register:
+  path: /register
+  controller: App\Controller\AuthenticationController::register
+  methods: POST
+
+app.swagger_ui:
+  path: /document
+  methods: GET
+  defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
+
+# config/routes.yaml
+app.swagger:
+  path: /document.json
+  methods: GET
+  defaults: { _controller: nelmio_api_doc.controller.swagger }
